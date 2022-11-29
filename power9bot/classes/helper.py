@@ -5,6 +5,7 @@ from power9bot.classes.addressBook import AddressBook
 from power9bot.classes.file_sorting import FileSorting
 from power9bot.classes.noteBook import NoteBook
 from power9bot.data.constants import COMMANDS_HELP
+from power9bot.classes.help_imaginator import HelpImaginator
 
 
 class Helper:
@@ -61,8 +62,10 @@ class Helper:
         }
         self.max_length_cmd = 3
         self.sorter = None
-        self.addressbook_path = os.path.join(os.path.dirname(__file__).replace('classes','data'), 'addressbook.bin')
-        self.notebook_path = os.path.join(os.path.dirname(__file__).replace('classes','data'), 'notebook.bin')
+        self.addressbook_path = os.path.join(os.path.dirname(
+            __file__).replace('classes', 'data'), 'addressbook.bin')
+        self.notebook_path = os.path.join(os.path.dirname(
+            __file__).replace('classes', 'data'), 'notebook.bin')
         self.addressbook_load()
         self.notebook_load()
 
@@ -285,7 +288,8 @@ class Helper:
         err = self.func_change_phone.__doc__
         self.check_args(3, 0, err, name, phone_old, phone_new, *args)
         self.addressbook.change_phone(name, phone_old, phone_new)
-        print(f"Contact {name}'s phone number '{phone_old}' has been changed to '{phone_new}'")
+        print(
+            f"Contact {name}'s phone number '{phone_old}' has been changed to '{phone_new}'")
 
     def func_show_all_contacts(self):
         """
@@ -429,7 +433,8 @@ class Helper:
         err = self.func_change_tag.__doc__
         self.check_args(3, 0, err, title, old_tag, new_tag, *args)
         self.notebook.change_tag(title, old_tag, new_tag)
-        print(f"The tag '{old_tag}' has been changed to '{new_tag}' in the note titled '{title}'")
+        print(
+            f"The tag '{old_tag}' has been changed to '{new_tag}' in the note titled '{title}'")
 
     def func_show_all_notes(self, flag=None, *args):
         """
@@ -487,8 +492,6 @@ class Helper:
                 break
             if is_remove == 'n':
                 break
-            
-
 
     def func_sort_folder(self, folder=None, *args):
         """
@@ -507,8 +510,7 @@ class Helper:
         Command: help
         Print the list of commands
         """
-        for command in COMMANDS_HELP:
-            print(command)
+        HelpImaginator(COMMANDS_HELP).imagination()
 
     def handler(self, cmd):
         command = cmd.strip().split(' ')
@@ -553,8 +555,7 @@ class Helper:
             pass
         if list_cmd:
             print('Maybe you wanted to use one of this commands:')
-            for element in list_cmd:
-                print('     ', element)
+            HelpImaginator(list_cmd).imagination()
         else:
             raise IndexError('Command is wrong')
 
@@ -576,7 +577,7 @@ class Helper:
             previous_row, current_row = current_row, [i] + [0] * n
             for j in range(1, n + 1):
                 add, delete, change = previous_row[j] + \
-                                      1, current_row[j - 1] + 1, previous_row[j - 1]
+                    1, current_row[j - 1] + 1, previous_row[j - 1]
                 if str_1[j - 1] != str_2[i - 1]:
                     change += 1
                 current_row[j] = min(add, delete, change)

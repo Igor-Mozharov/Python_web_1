@@ -6,6 +6,7 @@ from power9bot.classes.file_sorting import FileSorting
 from power9bot.classes.noteBook import NoteBook
 from power9bot.data.constants import COMMANDS_HELP
 from power9bot.classes.help_imaginator import HelpImaginator
+from power9bot.classes.message_imaginator import MessageImaginator
 
 
 class Helper:
@@ -104,7 +105,7 @@ class Helper:
         Command: hello
         Greetings from the POWER9 bot to the USER
         """
-        print('How can I help you?')
+        MessageImaginator('How can I help you!?').imagination()
 
     def func_exit(self):
         """

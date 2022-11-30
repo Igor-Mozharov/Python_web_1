@@ -61,24 +61,30 @@ class FileSorting:
             os.makedirs(path_to)
         if folder_to != 'archives':
             try:
-                os.rename(os.path.join(folder_from, file), os.path.join(path_to, self.normalize(file)))
+                os.rename(os.path.join(folder_from, file),
+                          os.path.join(path_to, self.normalize(file)))
             except FileExistsError:
                 print(f'File {file} is already exist')
                 while True:
-                    is_rewrite = input(f'Do you want to rewrite file {file} (y/n)').lower()
+                    is_rewrite = input(
+                        f'Do you want to rewrite file {file} (y/n)').lower()
                     if is_rewrite == 'y':
-                        os.replace(os.path.join(folder_from, file), os.path.join(path_to, self.normalize(file)))
+                        os.replace(os.path.join(folder_from, file),
+                                   os.path.join(path_to, self.normalize(file)))
                         break
                     elif is_rewrite == 'n':
-                        os.rename(os.path.join(folder_from, file), os.path.join(path_to, self.normalize(file, True)))
+                        os.rename(os.path.join(folder_from, file), os.path.join(
+                            path_to, self.normalize(file, True)))
                         break
 
         else:
             f = self.normalize(file).split('.')
             try:
-                shutil.unpack_archive(os.path.join(folder_from, file), os.path.join(path_to, f[0]), f[1])
+                shutil.unpack_archive(os.path.join(
+                    folder_from, file), os.path.join(path_to, f[0]), f[1])
             except shutil.ReadError:
-                print(f"Archive {os.path.join(folder_from, file)} can't be unpack")
+                print(
+                    f"Archive {os.path.join(folder_from, file)} can't be unpack")
             else:
                 os.remove(os.path.join(folder_from, file))
 

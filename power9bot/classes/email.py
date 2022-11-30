@@ -1,5 +1,5 @@
 import re
-from power9bot.classes.field import Field
+from field import Field
 
 
 class Email(Field):
@@ -13,6 +13,7 @@ class Email(Field):
         pattern = r"[^@]+@[^@]+\.[^@]+"
 
         if not re.match(pattern, value):
-            raise ValueError('You tried to enter incorrect e-mail. Please try again')
+            raise ValueError(
+                'You tried to enter incorrect e-mail. Please try again')
 
         self.__value = value

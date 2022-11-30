@@ -1,9 +1,9 @@
 import os
 import pickle
 
-from power9bot.classes.addressBook import AddressBook
-from power9bot.classes.file_sorting import FileSorting
-from power9bot.classes.noteBook import NoteBook
+from addressBook import AddressBook
+from file_sorting import FileSorting
+from noteBook import NoteBook
 from power9bot.data.constants import COMMANDS_HELP
 from default_imaginator import DefaultImaginator
 from help_imaginator import HelpImaginator

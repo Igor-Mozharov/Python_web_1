@@ -1,5 +1,5 @@
 from datetime import datetime
-from power9bot.classes.field import Field
+from field import Field
 
 
 class Birthday(Field):

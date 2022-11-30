@@ -1,7 +1,7 @@
 from collections import UserDict
-from power9bot.classes.birthday import Birthday
-from power9bot.classes.email import Email
-from power9bot.classes.record import Record
+from birthday import Birthday
+from email import Email
+from record import Record
 from shutil import get_terminal_size
 
 
@@ -292,7 +292,8 @@ class AddressBook(UserDict):
             print_string += ' {:^' + str(column_width - 2) + '} |'
         for contact in contacts:
             cnt_rows = 0
-            name = self.delimiter_text(str(contact.name).capitalize(), column_width - 2)
+            name = self.delimiter_text(
+                str(contact.name).capitalize(), column_width - 2)
             if len(name) > cnt_rows:
                 cnt_rows = len(name)
             address = self.delimiter_text(contact.address, column_width - 2)
@@ -301,7 +302,8 @@ class AddressBook(UserDict):
             email = self.delimiter_text(str(contact.email), column_width - 2)
             if len(email) > cnt_rows:
                 cnt_rows = len(email)
-            birthday = self.delimiter_text(str(contact.birthday), column_width - 2)
+            birthday = self.delimiter_text(
+                str(contact.birthday), column_width - 2)
             if len(birthday) > cnt_rows:
                 cnt_rows = len(birthday)
             phones = []

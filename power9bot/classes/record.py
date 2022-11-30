@@ -1,6 +1,6 @@
 from datetime import datetime
-from power9bot.classes.name import Name
-from power9bot.classes.phone import Phone
+from name import Name
+from phone import Phone
 
 
 class Record:

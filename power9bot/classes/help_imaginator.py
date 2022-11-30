@@ -1,4 +1,4 @@
-from power9bot.classes.default_imaginator import DefaultImaginator
+from default_imaginator import DefaultImaginator
 
 
 class HelpImaginator(DefaultImaginator):

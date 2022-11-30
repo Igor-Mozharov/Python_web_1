@@ -5,8 +5,11 @@ from power9bot.classes.addressBook import AddressBook
 from power9bot.classes.file_sorting import FileSorting
 from power9bot.classes.noteBook import NoteBook
 from power9bot.data.constants import COMMANDS_HELP
+from default_imaginator import DefaultImaginator
 from help_imaginator import HelpImaginator
 from message_imaginator import MessageImaginator
+from contact_imaginator import ContactImaginator
+from note_imaginator import NoteImaginator
 
 
 class Helper:
@@ -105,7 +108,7 @@ class Helper:
         Command: hello
         Greetings from the POWER9 bot to the USER
         """
-        MessageImaginator('How can I help you ?').imagination()
+        MessageImaginator('How can I help you ????????').imagination()
 
     def func_exit(self):
         """
@@ -319,7 +322,8 @@ class Helper:
         """
         err = self.func_show_contact.__doc__
         self.check_args(1, 0, err, name, *args)
-        self.addressbook.show_contact(name)
+        result = self.addressbook.show_contact(name)
+        ContactImaginator(result).imagination()
 
     def func_find_contact(self, key='', *args):
         """
@@ -329,7 +333,8 @@ class Helper:
         """
         if args:
             raise ValueError(self.func_find_contact.__doc__)
-        self.addressbook.find_contact(key)
+        result = self.addressbook.find_contact(key)
+        ContactImaginator(result).imagination()
 
     def func_show_birthdays(self, days, *args):
         """
@@ -343,7 +348,8 @@ class Helper:
             days = int(days)
         except Exception:
             raise ValueError('Day to birthday must be number.')
-        self.addressbook.show_birthdays(days)
+        result = self.addressbook.show_birthdays(days)
+        ContactImaginator(result).imagination()
 
     def func_add_note(self, title=None, *args):
         """
@@ -464,7 +470,8 @@ class Helper:
         """
         if (flag and flag != '-r') or args:
             raise ValueError(self.func_show_all_notes.__doc__)
-        self.notebook.show_all_notes(flag)
+        result = self.notebook.show_all_notes(flag)
+        NoteImaginator(result).imagination()
 
     def func_show_note(self, title=None, *args):
         """
@@ -474,7 +481,8 @@ class Helper:
         """
         err = self.func_show_note.__doc__
         self.check_args(1, 0, err, title, *args)
-        self.notebook.show_note(title)
+        result = self.notebook.show_note(title)
+        NoteImaginator(result).imagination()
 
     def func_find_note(self, key=None, flag=None, *args):
         """
@@ -485,7 +493,8 @@ class Helper:
         """
         if (flag and flag != '-r') or args:
             raise ValueError(self.func_find_note.__doc__)
-        self.notebook.find_note_by_word(key, flag)
+        result = self.notebook.find_note_by_word(key, flag)
+        NoteImaginator(result).imagination()
 
     def func_find_tag(self, tag=None, flag=None, *args):
         """
@@ -496,7 +505,8 @@ class Helper:
         """
         if (flag and flag != '-r') or args:
             raise ValueError(self.func_find_tag.__doc__)
-        self.notebook.find_note_by_tag(tag, flag)
+        result = self.notebook.find_note_by_tag(tag, flag)
+        NoteImaginator(result).imagination()
 
     def func_clear_notes(self, *args):
         """

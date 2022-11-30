@@ -1,15 +1,14 @@
 import os
 import pickle
 
-from addressBook import AddressBook
-from file_sorting import FileSorting
-from noteBook import NoteBook
-from power9bot.data.constants import COMMANDS_HELP
-from default_imaginator import DefaultImaginator
-from help_imaginator import HelpImaginator
-from message_imaginator import MessageImaginator
-from contact_imaginator import ContactImaginator
-from note_imaginator import NoteImaginator
+from classes.addressBook import AddressBook
+from classes.file_sorting import FileSorting
+from classes.noteBook import NoteBook
+from data.constants import COMMANDS_HELP
+from classes.help_imaginator import HelpImaginator
+from classes.message_imaginator import MessageImaginator
+from classes.contact_imaginator import ContactImaginator
+from classes.note_imaginator import NoteImaginator
 
 
 class Helper:

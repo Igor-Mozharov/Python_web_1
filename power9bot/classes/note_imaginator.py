@@ -1,4 +1,4 @@
-from default_imaginator import DefaultImaginator
+from classes.default_imaginator import DefaultImaginator
 
 
 class NoteImaginator(DefaultImaginator):

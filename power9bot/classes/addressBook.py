@@ -1,7 +1,7 @@
 from collections import UserDict
-from birthday import Birthday
-from email import Email
-from record import Record
+from classes.birthday import Birthday
+from classes.email import Email
+from classes.record import Record
 from shutil import get_terminal_size
 
 

@@ -1,6 +1,6 @@
 from datetime import datetime
-from name import Name
-from phone import Phone
+from classes.name import Name
+from classes.phone import Phone
 
 
 class Record:

@@ -5,7 +5,7 @@ from power9bot.classes.addressBook import AddressBook
 from power9bot.classes.file_sorting import FileSorting
 from power9bot.classes.noteBook import NoteBook
 from power9bot.data.constants import COMMANDS_HELP
-# from power9bot.classes.help_imaginator import HelpImaginator
+from help_imaginator import HelpImaginator
 from message_imaginator import MessageImaginator
 
 
@@ -105,7 +105,7 @@ class Helper:
         Command: hello
         Greetings from the POWER9 bot to the USER
         """
-        MessageImaginator('How can I help you!?').imagination()
+        MessageImaginator('How can I help you ?').imagination()
 
     def func_exit(self):
         """
@@ -113,7 +113,7 @@ class Helper:
         Terminates the work of the POWER9 bot
         All data is saved
         """
-        print('Goodbye!')
+        MessageImaginator('Goodbye!').imagination()
         quit()
 
     def func_add_contact(self, name=None, *args):
@@ -125,7 +125,7 @@ class Helper:
         err = self.func_add_contact.__doc__
         self.check_args(1, 0, err, name, *args)
         self.addressbook.add_contact(name)
-        print(f'Contact {name} added to the book')
+        MessageImaginator(f'Contact {name} added to the book').imagination()
 
     def func_remove_contact(self, name=None, *args):
         """
@@ -136,7 +136,8 @@ class Helper:
         err = self.func_remove_contact.__doc__
         self.check_args(1, 0, err, name, *args)
         self.addressbook.remove_contact(name)
-        print(f'Contact {name} removed from the book')
+        MessageImaginator(
+            f'Contact {name} removed from the book').imagination()
 
     def func_change_contact(self, name_old=None, name_new=None, *args):
         """
@@ -147,7 +148,8 @@ class Helper:
         err = self.func_change_contact.__doc__
         self.check_args(2, 0, err, name_old, name_new, *args)
         self.addressbook.change_contact(name_old, name_new)
-        print(f"{name_old}'s contact name has been changed")
+        MessageImaginator(
+            f"{name_old}'s contact name has been changed").imagination()
 
     def func_add_address(self, name=None, *args):
         """
@@ -160,7 +162,8 @@ class Helper:
         self.check_args(2, 1, err, name, *args)
         address = ' '.join(args)
         self.addressbook.add_address(name, address)
-        print(f"Address '{address}' added to {name}'s contact")
+        MessageImaginator(
+            f"Address '{address}' added to {name}'s contact").imagination()
 
     def func_remove_address(self, name=None, *args):
         """
@@ -171,7 +174,8 @@ class Helper:
         err = self.func_remove_address.__doc__
         self.check_args(1, 0, err, name, *args)
         self.addressbook.remove_address(name)
-        print(f"Address removed from {name}'s contact")
+        MessageImaginator(
+            f"Address removed from {name}'s contact").imagination()
 
     def func_change_address(self, name=None, *args):
         """
@@ -184,7 +188,8 @@ class Helper:
         self.check_args(2, 1, err, name, *args)
         address = ' '.join(args)
         self.addressbook.change_address(name, address)
-        print(f"{name}'s contact address has been changed to '{address}'")
+        MessageImaginator(
+            f"{name}'s contact address has been changed to '{address}'").imagination()
 
     def func_add_email(self, name=None, email=None, *args):
         """
@@ -195,7 +200,8 @@ class Helper:
         err = self.func_add_email.__doc__
         self.check_args(2, 0, err, name, email, *args)
         self.addressbook.add_email(name, email)
-        print(f"E-mail '{email}' added to {name}'s contact")
+        MessageImaginator(
+            f"E-mail '{email}' added to {name}'s contact").imagination()
 
     def func_remove_email(self, name=None, *args):
         """
@@ -206,7 +212,8 @@ class Helper:
         err = self.func_remove_email.__doc__
         self.check_args(1, 0, err, name, *args)
         self.addressbook.remove_email(name)
-        print(f"E-mail removed from {name}'s contact")
+        MessageImaginator(
+            f"E-mail removed from {name}'s contact").imagination()
 
     def func_change_email(self, name=None, email=None, *args):
         """
@@ -217,7 +224,8 @@ class Helper:
         err = self.func_change_email.__doc__
         self.check_args(2, 0, err, name, email, *args)
         self.addressbook.change_email(name, email)
-        print(f"{name}'s contact e-mail has been changed to '{email}'")
+        MessageImaginator(
+            f"{name}'s contact e-mail has been changed to '{email}'").imagination()
 
     def func_add_birthday(self, name=None, birthday=None, *args):
         """
@@ -229,7 +237,8 @@ class Helper:
         err = self.func_add_birthday.__doc__
         self.check_args(2, 0, err, name, birthday, *args)
         self.addressbook.add_birthday(name, birthday)
-        print(f"Date of birthday '{birthday}' added to {name}'s contact")
+        MessageImaginator(
+            f"Date of birthday '{birthday}' added to {name}'s contact").imagination()
 
     def func_remove_birthday(self, name=None, *args):
         """
@@ -240,7 +249,8 @@ class Helper:
         err = self.func_remove_birthday.__doc__
         self.check_args(1, 0, err, name, *args)
         self.addressbook.remove_birthday(name)
-        print(f"Date of birthday removed from {name}'s contact")
+        MessageImaginator(
+            f"Date of birthday removed from {name}'s contact").imagination()
 
     def func_change_birthday(self, name=None, birthday=None, *args):
         """
@@ -252,7 +262,8 @@ class Helper:
         err = self.func_change_birthday.__doc__
         self.check_args(2, 0, err, name, birthday, *args)
         self.addressbook.change_birthday(name, birthday)
-        print(f"{name}'s contact birthday has been changed to '{birthday}'")
+        MessageImaginator(
+            f"{name}'s contact birthday has been changed to '{birthday}'").imagination()
 
     def func_add_phone(self, name=None, phone=None, *args):
         """
@@ -264,7 +275,8 @@ class Helper:
         err = self.func_add_phone.__doc__
         self.check_args(2, 0, err, name, phone, *args)
         self.addressbook.add_phone(name, phone)
-        print(f"Phone '{phone}' added to {name}'s contact")
+        MessageImaginator(
+            f"Phone '{phone}' added to {name}'s contact").imagination()
 
     def func_remove_phone(self, name=None, phone=None, *args):
         """
@@ -276,7 +288,8 @@ class Helper:
         err = self.func_remove_phone.__doc__
         self.check_args(2, 0, err, name, phone, *args)
         self.addressbook.remove_phone(name, phone)
-        print(f"Phone '{phone}' removed from {name}'s contact")
+        MessageImaginator(
+            f"Phone '{phone}' removed from {name}'s contact").imagination()
 
     def func_change_phone(self, name=None, phone_old=None, phone_new=None, *args):
         """
@@ -289,8 +302,7 @@ class Helper:
         err = self.func_change_phone.__doc__
         self.check_args(3, 0, err, name, phone_old, phone_new, *args)
         self.addressbook.change_phone(name, phone_old, phone_new)
-        print(
-            f"Contact {name}'s phone number '{phone_old}' has been changed to '{phone_new}'")
+        MessageImaginator(value)
 
     def func_show_all_contacts(self):
         """
@@ -342,7 +354,7 @@ class Helper:
         err = self.func_add_note.__doc__
         self.check_args(1, 0, err, title, *args)
         self.notebook.add_note(title)
-        print(f"Added note with title '{title}'")
+        MessageImaginator(f"Added note with title '{title}'").imagination()
 
     def func_remove_note(self, title=None, *args):
         """
@@ -353,7 +365,8 @@ class Helper:
         err = self.func_remove_note.__doc__
         self.check_args(1, 0, err, title, *args)
         self.notebook.delete_note(title)
-        print(f"The note with the title '{title}' has been deleted")
+        MessageImaginator(
+            f"The note with the title '{title}' has been deleted").imagination()
 
     def func_change_note(self, title_old=None, title_new=None, *args):
         """
@@ -364,7 +377,8 @@ class Helper:
         err = self.func_change_note.__doc__
         self.check_args(2, 0, err, title_old, title_new, *args)
         self.notebook.change_note(title_old, title_new)
-        print(f"'{title_old}' note has its title changed to '{title_new}'")
+        MessageImaginator(
+            f"'{title_old}' note has its title changed to '{title_new}'").imagination()
 
     def func_add_text(self, title=None, *args):
         """
@@ -377,7 +391,8 @@ class Helper:
         self.check_args(2, 1, err, title, *args)
         text = ' '.join(args)
         self.notebook.add_text(title, text)
-        print(f"Added text to the note titled '{title}'")
+        MessageImaginator(
+            f"Added text to the note titled '{title}'").imagination()
 
     def func_remove_text(self, title=None, *args):
         """
@@ -388,7 +403,8 @@ class Helper:
         err = self.func_remove_text.__doc__
         self.check_args(1, 0, err, title, *args)
         self.notebook.edit_text(title, '')
-        print(f"Text removed from the note with title '{title}'")
+        MessageImaginator(
+            f"Text removed from the note with title '{title}'").imagination()
 
     def func_change_text(self, title=None, *args):
         """
@@ -401,7 +417,8 @@ class Helper:
         self.check_args(2, 1, err, title, *args)
         text = ' '.join(args)
         self.notebook.edit_text(title, text)
-        print(f"Text changed in the note titled '{title}'")
+        MessageImaginator(
+            f"Text changed in the note titled '{title}'").imagination()
 
     def func_add_tag(self, title=None, tag=None, *args):
         """
@@ -412,7 +429,8 @@ class Helper:
         err = self.func_add_tag.__doc__
         self.check_args(2, 0, err, title, tag, *args)
         self.notebook.add_tag(title, tag)
-        print(f"Added '{tag}' to the note titled '{title}'")
+        MessageImaginator(
+            f"Added '{tag}' to the note titled '{title}'").imagination()
 
     def func_remove_tag(self, title=None, tag=None, *args):
         """
@@ -423,7 +441,8 @@ class Helper:
         err = self.func_remove_tag.__doc__
         self.check_args(2, 0, err, title, tag, *args)
         self.notebook.remove_tag(title, tag)
-        print(f"Tag '{tag}' removed from the note with title '{title}'")
+        MessageImaginator(
+            f"Tag '{tag}' removed from the note with title '{title}'").imagination()
 
     def func_change_tag(self, title=None, old_tag=None, new_tag=None, *args):
         """
@@ -434,8 +453,8 @@ class Helper:
         err = self.func_change_tag.__doc__
         self.check_args(3, 0, err, title, old_tag, new_tag, *args)
         self.notebook.change_tag(title, old_tag, new_tag)
-        print(
-            f"The tag '{old_tag}' has been changed to '{new_tag}' in the note titled '{title}'")
+        MessageImaginator(
+            f"The tag '{old_tag}' has been changed to '{new_tag}' in the note titled '{title}'").imagination()
 
     def func_show_all_notes(self, flag=None, *args):
         """
@@ -555,7 +574,8 @@ class Helper:
         if not list_cmd:
             pass
         if list_cmd:
-            print('Maybe you wanted to use one of this commands:')
+            MessageImaginator(
+                'Maybe you wanted to use one of this commands:').imagination()
             HelpImaginator(list_cmd).imagination()
         else:
             raise IndexError('Command is wrong')

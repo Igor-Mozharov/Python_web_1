@@ -1,7 +1,7 @@
 from collections import UserDict
-from classes.birthday import Birthday
-from classes.email import Email
-from classes.record import Record
+from power9bot.classes.birthday import Birthday
+from power9bot.classes.email import Email
+from power9bot.classes.record import Record
 from shutil import get_terminal_size
 
 

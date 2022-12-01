@@ -1,4 +1,4 @@
-from classes.helper import Helper
+from power9bot.classes.helper import Helper
 
 
 def main():

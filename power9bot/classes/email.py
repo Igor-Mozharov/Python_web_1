@@ -1,5 +1,5 @@
 import re
-from classes.field import Field
+from power9bot.classes.field import Field
 
 
 class Email(Field):

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b579be4-2b9e-4369-9f33-fca51a48e8b1" name="Changes" comment="Bot Beta 1.0.2">
-      <change beforePath="$PROJECT_DIR$/power9bot/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/power9bot/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/power9bot/classes/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/power9bot/classes/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/power9bot/data/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/power9bot/data/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/power9bot/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/power9bot/.idea/.name" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

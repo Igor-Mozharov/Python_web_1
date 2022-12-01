@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b579be4-2b9e-4369-9f33-fca51a48e8b1" name="Changes" comment="Bot Beta 1.0.2">
-      <change beforePath="$PROJECT_DIR$/power9bot/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/power9bot/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Python_web_1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Python_web_1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/power9bot/classes/helper.py" beforeDir="false" afterPath="$PROJECT_DIR$/power9bot/classes/helper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/power9bot/data/addressbook.bin" beforeDir="false" afterPath="$PROJECT_DIR$/power9bot/data/addressbook.bin" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,13 +30,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PythonContentEntriesConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Projects/Python_web/Python_web_1",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PythonContentEntriesConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User02\Documents\GitHub\power9bot\power9bot\classes2" />
@@ -42,7 +46,7 @@
   </component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="power9bot" />
+      <module name="Python_web_1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>

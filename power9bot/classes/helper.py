@@ -107,7 +107,7 @@ class Helper:
         Command: hello
         Greetings from the POWER9 bot to the USER
         """
-        MessageImaginator('How can I help you ????????').imagination()
+        MessageImaginator('How can I help you ?').imagination()
 
     def func_exit(self):
         """
